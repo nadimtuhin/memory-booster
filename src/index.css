@@ -3,3 +3,26 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.block {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    float: left;
+    background: white;
+}
+
+.block {
+    background: white;
+}
+
+.block.gem, .block.gem.selected {
+    background: red;
+}
+
+.block.selected {
+    background: gold;
+}

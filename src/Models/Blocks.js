@@ -1,25 +1,28 @@
 import { observable, action } from 'mobx';
 import range from 'lodash/range';
-import sampleSize from 'lodash/sampleSize';
 import uniqueId from 'lodash/uniqueId';
+import sampleSize from 'lodash/sampleSize';
 
 export default class Blocks {
-  @observable boxes = [];
+  @observable blocks = [];
   @observable gems = [];
-  @observable width = 3;
+  @observable length = 3;
   @observable level = 2;
-  @observable isPlaying = false;
-  @observable shouldMemorize = false;
 
   @action draw() {
-      this.boxes = range(this.width*this.width).map(ii => ({
-        gem: this.gems.includes(ii),
-        id: uniqueId('box-'),
-        selected: false
-      }));
+    this.blocks.forEach(index => ({
+      selected: false,
+      id: uniqueId('box-'),
+      gem: this.gems.includes(index),
+    }));
   }
 
   @action generate() {
-    this.gems = sampleSize(range(this.width*this.width), this.level);
+    const blocks = range(this.length * this.length);
+
+    this.gems = sampleSize(blocks, this.level);
+    this.blocks = blocks.map(index => ({
+      id: uniqueId('box-')
+    }));
   }
 }
