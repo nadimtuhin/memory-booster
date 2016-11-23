@@ -4,7 +4,7 @@ import { action } from 'mobx';
 
 import Block from './Block';
 
-class Play extends Component {
+export class Play extends Component {
   static propTypes = {
     blocks: PropTypes.object.isRequired,
     length: PropTypes.number.isRequired
@@ -39,6 +39,8 @@ class Play extends Component {
     );
   }
 }
+
+
 export default inject(store => {
   store.board.generate();
   store.board.draw();

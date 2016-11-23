@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
-class Block extends Component {
+export class Block extends Component {
   static propTypes = {
-    onClick: PropTypes.func.isRequired,
     width: PropTypes.number.isRequired,
     index: PropTypes.number.isRequired,
+    onClick: PropTypes.func.isRequired,
     selected: PropTypes.bool.isRequired
   };
 
