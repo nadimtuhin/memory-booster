@@ -15,7 +15,7 @@ export class Block extends Component {
 
   render() {
     const { selected, width } = this.props;
-    const classes = classnames('box', { selected });
+    const classes = classnames('block', { selected });
 
     return (
       <div style={{ width }} onClick={this.handleClick} className={classes} />
