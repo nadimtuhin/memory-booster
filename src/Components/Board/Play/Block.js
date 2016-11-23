@@ -6,7 +6,8 @@ export class Block extends Component {
     width: PropTypes.number.isRequired,
     index: PropTypes.number.isRequired,
     onClick: PropTypes.func.isRequired,
-    selected: PropTypes.bool.isRequired
+    selected: PropTypes.bool.isRequired,
+    gem: PropTypes.bool.isRequired,
   };
 
   handleClick = () => {
@@ -14,8 +15,8 @@ export class Block extends Component {
   };
 
   render() {
-    const { selected, width } = this.props;
-    const classes = classnames('block', { selected });
+    const { selected, width, gem } = this.props;
+    const classes = classnames('block', { gem, selected });
 
     return (
       <div style={{ width }} onClick={this.handleClick} className={classes} />

@@ -32,6 +32,7 @@ export class Play extends Component {
       index={index}
       width={50}
       selected={block.selected}
+      gem={block.gem}
       onClick={this.handleSelectBlock}
     />;
   };
@@ -40,9 +41,16 @@ export class Play extends Component {
     const { blocks, length } = this.props;
     const { gameOver } = this.state;
 
+    const l = length * 50;
+
     return (
-      <div style={{ width: length * 50 }} className={classnames({ gameOver })}>
-        { blocks.map(this.renderBlock) }
+      <div
+        style={{ width: l, height: l }}
+        className={classnames('Play', { gameOver })}
+      >
+        <div className="blocks">
+          { blocks.map(this.renderBlock) }
+        </div>
 
         { gameOver && <div className='gameOver__overlay'>
           Game Over
