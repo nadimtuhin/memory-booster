@@ -9,20 +9,19 @@ export default class Blocks {
   @observable length = 3;
   @observable level = 2;
 
-  @action draw() {
-    this.blocks.forEach(index => ({
-      selected: false,
-      id: uniqueId('box-'),
-      gem: this.gems.includes(index),
-    }));
-  }
-
   @action generate() {
     const blocks = range(this.length * this.length);
 
     this.gems = sampleSize(blocks, this.level);
+  }
+
+  @action draw() {
+    const blocks = range(this.length * this.length);
+
     this.blocks = blocks.map(index => ({
-      id: uniqueId('box-')
+      selected: false,
+      id: uniqueId('box-'),
+      gem: this.gems.includes(index),
     }));
   }
 }

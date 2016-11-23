@@ -7,14 +7,15 @@ it('should generate random gems', () => {
   expect(board.gems.length).toEqual(2);
 });
 
-it('should create boxes', () => {
+it('should create blocks', () => {
   const board = new BlocksBoard();
-  board.gems = [1,2,4];
   board.width = 4;
   board.level = 3;
 
+  board.gems = [1,2,4];
   board.draw();
-  expect(board.boxes[1].gem).toEqual(true);
-  expect(board.boxes[2].gem).toEqual(true);
-  expect(board.boxes[4].gem).toEqual(true);
+
+  expect(board.blocks[1].gem).toEqual(true);
+  expect(board.blocks[2].gem).toEqual(true);
+  expect(board.blocks[4].gem).toEqual(true);
 });
