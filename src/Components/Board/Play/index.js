@@ -3,6 +3,7 @@ import { observer, inject } from 'mobx-react';
 import classnames from 'classnames';
 import { action } from 'mobx';
 import Block from './Block';
+import leftBlocks from './lib/leftBlocks';
 
 export class Play extends Component {
   static propTypes = {
@@ -16,10 +17,17 @@ export class Play extends Component {
 
   @action
   handleSelectBlock = (index) => {
-    const block = this.props.blocks[index];
+    const { blocks } = this.props;
+    const block = blocks[index];
     block.selected = true;
 
-    if (block.gem !== true) {
+    const left = leftBlocks(blocks).length;
+
+    if (!left) {
+      setTimeout(()=> {
+        alert('you are awesome');
+      }, 100);
+    } else if (block.gem !== true) {
       this.setState({
         gameOver: true
       });
@@ -31,8 +39,8 @@ export class Play extends Component {
       key={block.id}
       index={index}
       width={50}
-      selected={block.selected}
       gem={block.gem}
+      selected={block.selected}
       onClick={this.handleSelectBlock}
     />;
   };

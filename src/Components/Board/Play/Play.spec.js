@@ -12,6 +12,7 @@ const router = {
 
 it('Play renders without crashing', () => {
   const div = document.createElement('div');
+  const gems = mobx.observable([]);
   const blocks = mobx.observable([
     { id: 0, gem: false, selected: false },
     { id: 1, gem: true, selected: false },
@@ -20,6 +21,7 @@ it('Play renders without crashing', () => {
   ReactDOM.render((
     <Play
       router={router}
+      gems={gems}
       blocks={blocks}
       length={3}
     />
@@ -27,6 +29,7 @@ it('Play renders without crashing', () => {
 });
 
 it('Play/Block ', () => {
+  const gems = mobx.observable([1,2,3]);
   const blocks = mobx.observable([
     { id: 0, gem: false, selected: false },
     { id: 1, gem: true, selected: false },
@@ -36,7 +39,7 @@ it('Play/Block ', () => {
   ]);
 
   const component = renderer.create(
-    <Play blocks={blocks} length={3} />
+    <Play gems={gems} blocks={blocks} length={3} />
   );
 
   let tree = component.toJSON();
