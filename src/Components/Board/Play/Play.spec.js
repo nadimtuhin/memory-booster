@@ -41,6 +41,7 @@ it('Play/Block ', () => {
 
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+
   tree.children[0].children[0].props.onClick();
   tree = component.toJSON();
 
