@@ -26,3 +26,8 @@ body {
 .block.selected {
     background: gold;
 }
+
+.gameOver {
+    opacity: 0.5;
+    background: yellow;
+}
