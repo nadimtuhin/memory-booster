@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { observer, inject } from 'mobx-react';
 import classnames from 'classnames';
 import { action } from 'mobx';
-
 import Block from './Block';
 
 export class Play extends Component {
@@ -54,12 +53,7 @@ export class Play extends Component {
 }
 
 
-export default inject(store => {
-  store.board.generate();
-  store.board.draw();
-
-  return ({
-    blocks: store.board.blocks,
-    length: store.board.length
-  })
-})(observer(Play));
+export default inject(store => ({
+  blocks: store.board.blocks,
+  length: store.board.length
+}))(observer(Play));
