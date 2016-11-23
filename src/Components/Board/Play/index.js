@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { observer, inject } from 'mobx-react';
+import classnames from 'classnames';
+import { action } from 'mobx';
 
 import Block from './Block';
 
@@ -9,9 +11,20 @@ export class Play extends Component {
     length: PropTypes.number.isRequired
   };
 
+  state = {
+    gameOver: false
+  };
+
+  @action
   handleSelectBlock = (index) => {
     const block = this.props.blocks[index];
     block.selected = true;
+
+    if (block.gem !== true) {
+      this.setState({
+        gameOver: true
+      });
+    }
   };
 
   renderBlock = (block, index) => {
@@ -26,10 +39,15 @@ export class Play extends Component {
 
   render() {
     const { blocks, length } = this.props;
+    const { gameOver } = this.state;
 
     return (
-      <div style={{ width: length * 50 }}>
+      <div style={{ width: length * 50 }} className={classnames({ gameOver })}>
         { blocks.map(this.renderBlock) }
+
+        { gameOver && <div className='gameOver__overlay'>
+          Game Over
+        </div> }
       </div>
     );
   }

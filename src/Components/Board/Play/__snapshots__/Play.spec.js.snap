@@ -1,12 +1,13 @@
 exports[`test Play/Block  1`] = `
 <div
+  className=""
   style={
     Object {
       "width": 150,
     }
   }>
   <div
-    className="box"
+    className="block"
     onClick={[Function]}
     style={
       Object {
@@ -14,7 +15,7 @@ exports[`test Play/Block  1`] = `
       }
     } />
   <div
-    className="box"
+    className="block"
     onClick={[Function]}
     style={
       Object {
@@ -22,7 +23,7 @@ exports[`test Play/Block  1`] = `
       }
     } />
   <div
-    className="box"
+    className="block"
     onClick={[Function]}
     style={
       Object {
@@ -30,7 +31,7 @@ exports[`test Play/Block  1`] = `
       }
     } />
   <div
-    className="box"
+    className="block"
     onClick={[Function]}
     style={
       Object {
@@ -38,7 +39,7 @@ exports[`test Play/Block  1`] = `
       }
     } />
   <div
-    className="box"
+    className="block"
     onClick={[Function]}
     style={
       Object {
