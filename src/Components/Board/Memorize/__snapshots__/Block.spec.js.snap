@@ -1,0 +1,19 @@
+exports[`test Memorize/Block matches snapshot gem false 1`] = `
+<div
+  className="block"
+  style={
+    Object {
+      "width": 50,
+    }
+  } />
+`;
+
+exports[`test Memorize/Block matches snapshot gem true 1`] = `
+<div
+  className="block gem"
+  style={
+    Object {
+      "width": 50,
+    }
+  } />
+`;

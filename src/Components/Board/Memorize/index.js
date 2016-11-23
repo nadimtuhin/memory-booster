@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import { browserHistory } from 'react-router';
 import { observer, inject } from 'mobx-react';
 import queue from 'async/queue';
 import Block from './Block';
 
-class Memorize extends Component {
+export class Memorize extends Component {
   static propTypes = {
     gems: PropTypes.object.isRequired,
     blocks: PropTypes.object.isRequired,
@@ -26,7 +25,7 @@ class Memorize extends Component {
     }, 1);
 
     q.drain = (() => {
-      browserHistory.push('/play');
+      this.props.router.push('/play');
     });
 
     gems.forEach(gem => q.push(gem));

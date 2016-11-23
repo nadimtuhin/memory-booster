@@ -1,0 +1,44 @@
+exports[`test Memorize/Block matches snapshot gem true 1`] = `
+<div
+  style={
+    Object {
+      "width": 150,
+    }
+  }>
+  <div
+    className="block"
+    style={
+      Object {
+        "width": 50,
+      }
+    } />
+  <div
+    className="block"
+    style={
+      Object {
+        "width": 50,
+      }
+    } />
+  <div
+    className="block"
+    style={
+      Object {
+        "width": 50,
+      }
+    } />
+  <div
+    className="block"
+    style={
+      Object {
+        "width": 50,
+      }
+    } />
+  <div
+    className="block"
+    style={
+      Object {
+        "width": 50,
+      }
+    } />
+</div>
+`;
