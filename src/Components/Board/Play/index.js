@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { observer, inject } from 'mobx-react';
-import { action } from 'mobx';
 
 import Block from './Block';
 
@@ -10,20 +9,16 @@ export class Play extends Component {
     length: PropTypes.number.isRequired
   };
 
-  @action
   handleSelectBlock = (index) => {
     const block = this.props.blocks[index];
     block.selected = true;
   };
 
   renderBlock = (block, index) => {
-    const { length } = this.props;
-    console.log(block.selected);
-
     return <Block
       key={block.id}
       index={index}
-      width={length}
+      width={50}
       selected={block.selected}
       onClick={this.handleSelectBlock}
     />;

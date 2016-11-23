@@ -1,0 +1,49 @@
+exports[`test Play/Block  1`] = `
+<div
+  style={
+    Object {
+      "width": 150,
+    }
+  }>
+  <div
+    className="box"
+    onClick={[Function]}
+    style={
+      Object {
+        "width": 50,
+      }
+    } />
+  <div
+    className="box"
+    onClick={[Function]}
+    style={
+      Object {
+        "width": 50,
+      }
+    } />
+  <div
+    className="box"
+    onClick={[Function]}
+    style={
+      Object {
+        "width": 50,
+      }
+    } />
+  <div
+    className="box"
+    onClick={[Function]}
+    style={
+      Object {
+        "width": 50,
+      }
+    } />
+  <div
+    className="box"
+    onClick={[Function]}
+    style={
+      Object {
+        "width": 50,
+      }
+    } />
+</div>
+`;
