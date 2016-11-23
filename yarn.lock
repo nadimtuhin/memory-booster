@@ -4401,6 +4401,10 @@ react-router:
     loose-envify "^1.2.0"
     warning "^3.0.0"
 
+react-test-renderer:
+  version "15.4.1"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.4.1.tgz#e38cd7057868d4a655d3764689735b4b97260706"
+
 react@^15.4.0:
   version "15.4.0"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.0.tgz#736c1c7c542e8088127106e1f450b010f86d172b"
