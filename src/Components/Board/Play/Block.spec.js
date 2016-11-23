@@ -30,3 +30,16 @@ it('Play/Block matches snapshot selected false', () => {
 
   expect(tree).toMatchSnapshot();
 });
+
+it('should use onClick on clicking the component', () => {
+  function callback(index) {
+    expect(index).toBe(1);
+  }
+
+  const component = renderer.create(
+    <Block width={50} selected={false} index={1} onClick={callback} />
+  );
+
+  let tree = component.toJSON();
+  tree.props.onClick();
+});
