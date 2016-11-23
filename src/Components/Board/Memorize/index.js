@@ -1,11 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
 import { observer, inject } from 'mobx-react';
-import classnames from 'classnames';
 import queue from 'async/queue';
-
-const Block = ({ gem, width }) =>
-  <div className={classnames('block', { gem })} style={{ width }} />;
+import Block from './Block';
 
 class Memorize extends Component {
   static propTypes = {
