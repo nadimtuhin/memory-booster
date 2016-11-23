@@ -1,50 +1,54 @@
 exports[`test Play/Block  1`] = `
 <div
-  className=""
+  className="Play"
   style={
     Object {
+      "height": 150,
       "width": 150,
     }
   }>
   <div
-    className="block"
-    onClick={[Function]}
-    style={
-      Object {
-        "width": 50,
-      }
-    } />
-  <div
-    className="block"
-    onClick={[Function]}
-    style={
-      Object {
-        "width": 50,
-      }
-    } />
-  <div
-    className="block"
-    onClick={[Function]}
-    style={
-      Object {
-        "width": 50,
-      }
-    } />
-  <div
-    className="block"
-    onClick={[Function]}
-    style={
-      Object {
-        "width": 50,
-      }
-    } />
-  <div
-    className="block"
-    onClick={[Function]}
-    style={
-      Object {
-        "width": 50,
-      }
-    } />
+    className="blocks">
+    <div
+      className="block"
+      onClick={[Function]}
+      style={
+        Object {
+          "width": 50,
+        }
+      } />
+    <div
+      className="block gem"
+      onClick={[Function]}
+      style={
+        Object {
+          "width": 50,
+        }
+      } />
+    <div
+      className="block gem"
+      onClick={[Function]}
+      style={
+        Object {
+          "width": 50,
+        }
+      } />
+    <div
+      className="block gem"
+      onClick={[Function]}
+      style={
+        Object {
+          "width": 50,
+        }
+      } />
+    <div
+      className="block"
+      onClick={[Function]}
+      style={
+        Object {
+          "width": 50,
+        }
+      } />
+  </div>
 </div>
 `;

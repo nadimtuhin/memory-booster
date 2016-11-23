@@ -1,5 +1,6 @@
 exports[`test Memorize/Block matches snapshot gem true 1`] = `
 <div
+  className="Memorize"
   style={
     Object {
       "width": 150,
