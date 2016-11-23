@@ -5,6 +5,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Memory Booster</h1>
+        <a href="/start">Restart</a>
         <hr />
 
         { this.props.children }
