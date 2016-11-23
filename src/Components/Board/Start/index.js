@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { browserHistory } from 'react-router';
+import { Link } from 'react-router';
 import { observer } from 'mobx-react';
 
 class Start extends Component {
@@ -8,18 +8,11 @@ class Start extends Component {
   };
 
   updateWidth = (e) => {
-    this.props.board.length = parseInt(e.target.value, 10);
+    this.props.board.length = Number(e.target.value);
   };
 
   updateLevel = (e) => {
-    this.props.board.level = parseInt(e.target.value, 10);
-  };
-
-  handleStart = () => {
-    this.props.board.generate();
-    this.props.board.draw();
-
-    browserHistory.push('/memorize');
+    this.props.board.level = Number(e.target.value);
   };
 
   render() {
@@ -36,7 +29,7 @@ class Start extends Component {
           <input type="text" value={board.level} onChange={this.updateLevel} />
         </div>
         <div>
-          <button type="button" onClick={this.handleStart}> Start</button>
+          <Link to="/memorize"> Start</Link>
         </div>
       </div>
     );

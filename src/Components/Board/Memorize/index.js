@@ -45,15 +45,21 @@ export class Memorize extends Component {
     const { blocks, length } = this.props;
 
     return (
-      <div style={{ width: length * 50 }}>
+      <div className="Memorize" style={{ width: length * 50 }}>
         { blocks.map(this.renderBlock) }
       </div>
     );
   }
 }
 
-export default inject(store => ({
-  blocks: store.board.blocks,
-  length: store.board.length,
-  gems: store.board.gems
-}))(observer(Memorize));
+
+export default inject(store => {
+  store.board.generate();
+  store.board.draw();
+
+  return ({
+    blocks: store.board.blocks,
+    length: store.board.length,
+    gems: store.board.gems
+  });
+})(observer(Memorize));
