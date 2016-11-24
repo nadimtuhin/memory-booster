@@ -10,11 +10,11 @@ export default class Blocks {
 
   levels = [
     [3, 2], [3, 3], [3, 4],
-    [4, 3], [4, 4], [4, 5], [4, 6],
-    [5, 4], [5, 5], [5, 6], [5, 7], [5, 8],
-    [6, 5], [6, 6], [6, 7], [6, 8], [6, 9], [6, 10],
-    [7, 6], [7, 7], [7, 8], [7, 9], [7, 10], [7, 11], [7, 12],
-    [8, 7], [8, 8], [8, 9], [8, 10], [8, 11], [8, 12], [8, 13], [8, 14]
+    [4, 4], [4, 5], [4, 6],
+    [5, 5], [5, 6], [5, 7], [5, 8],
+    [6, 6], [6, 7], [6, 8], [6, 9],
+    [7, 7], [7, 8], [7, 9], [7, 10], [7, 11],
+    [8, 8], [8, 9], [8, 10], [8, 11], [8, 12],
   ];
 
   @action increaseLevel() {
@@ -22,10 +22,10 @@ export default class Blocks {
   }
 
   @computed get currentLevel() {
-    const [length, level ] = this.levels[this.level];
+    const [length, gems ] = this.levels[this.level];
 
     return {
-      level, length
+      gems, length
     }
   }
 
@@ -36,7 +36,7 @@ export default class Blocks {
 
   @action generate() {
     const blocks = this.generateBlocks();
-    this.gems = sampleSize(blocks, this.currentLevel.length);
+    this.gems = sampleSize(blocks, this.currentLevel.gems);
   }
 
   @action draw() {
