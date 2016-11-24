@@ -9,8 +9,6 @@ it('should generate random gems', () => {
 
 it('should create blocks', () => {
   const board = new BlocksBoard();
-  board.width = 4;
-  board.level = 3;
 
   board.gems = [1,2,4];
   board.draw();

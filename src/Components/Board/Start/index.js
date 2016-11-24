@@ -7,10 +7,6 @@ class Start extends Component {
     board: PropTypes.object
   };
 
-  updateWidth = (e) => {
-    this.props.board.length = Number(e.target.value);
-  };
-
   updateLevel = (e) => {
     this.props.board.level = Number(e.target.value);
   };
@@ -21,15 +17,11 @@ class Start extends Component {
     return (
       <div>
         <div>
-          <label>Width</label>
-          <input type="text" value={board.length} onChange={this.updateWidth} />
-        </div>
-        <div>
           <label>Level</label>
-          <input type="text" value={board.level} onChange={this.updateLevel} />
+          <input type="number" value={board.level} onChange={this.updateLevel} />
         </div>
         <div>
-          <Link to="/memorize"> Start</Link>
+          <Link activeClassName='btn' to="/memorize"> Start</Link>
         </div>
       </div>
     );

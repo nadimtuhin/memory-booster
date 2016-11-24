@@ -71,5 +71,5 @@ export class Play extends Component {
 
 export default inject(store => ({
   blocks: store.board.blocks,
-  length: store.board.length
+  length: store.board.currentLevel.length
 }))(observer(Play));

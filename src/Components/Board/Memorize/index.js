@@ -58,8 +58,8 @@ export default inject(store => {
   store.board.draw();
 
   return ({
+    length: store.board.currentLevel.length,
     blocks: store.board.blocks,
-    length: store.board.length,
     gems: store.board.gems
   });
 })(observer(Memorize));

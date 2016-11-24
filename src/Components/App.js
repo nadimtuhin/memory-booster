@@ -6,7 +6,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Memory Booster</h1>
-        <Link to="/start">Restart</Link>
+
+        <Link activeClassName="btn" to="/">Back</Link> <span> </span>
+        <Link activeClassName="btn" to="/memorize">Reload</Link>
+
         <hr />
 
         { this.props.children }
