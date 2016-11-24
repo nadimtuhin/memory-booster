@@ -2,9 +2,10 @@ import BlocksBoard from './Blocks';
 
 it('should generate random gems', () => {
   const board = new BlocksBoard();
+  board.level = 0;
   board.generate();
 
-  expect(board.gems.length).toEqual(2);
+  expect(board.gems.length).toEqual(3);
 });
 
 it('should create blocks', () => {
