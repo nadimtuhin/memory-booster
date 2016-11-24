@@ -1,7 +1,7 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
 .block {
@@ -15,8 +15,8 @@ body {
     background: white;
 }
 
-.Memorize .gem {
-    background: red;
+.Memorize .gem, .gameOver .gem {
+    background: red !important;
 }
 
 .Play .selected {
@@ -28,10 +28,10 @@ body {
 }
 
 .gameOver .gameOver__overlay {
-    position:absolute;
-    top:0px;
-    left:0px;
-    bottom:0px;
-    right:0px;
-    background-color:rgba(255,255,0,0.5);
+    background-color: rgba(138, 138, 138, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }

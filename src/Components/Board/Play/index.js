@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { observer, inject } from 'mobx-react';
 import classnames from 'classnames';
 import { action } from 'mobx';
+import { Link } from 'react-router';
 import Block from './Block';
 import leftBlocks from './lib/leftBlocks';
 
@@ -12,25 +13,23 @@ export class Play extends Component {
   };
 
   state = {
-    gameOver: false
+    gameOver: false,
+    success: false
   };
 
   @action
   handleSelectBlock = (index) => {
-    const { blocks } = this.props;
+    const { blocks, increaseLevel } = this.props;
     const block = blocks[index];
     block.selected = true;
 
     const left = leftBlocks(blocks).length;
 
     if (!left) {
-      setTimeout(()=> {
-        alert('you are awesome');
-      }, 100);
+      increaseLevel();
+      this.setState({ success: true });
     } else if (block.gem !== true) {
-      this.setState({
-        gameOver: true
-      });
+      this.setState({ gameOver: true });
     }
   };
 
@@ -47,7 +46,7 @@ export class Play extends Component {
 
   render() {
     const { blocks, length } = this.props;
-    const { gameOver } = this.state;
+    const { gameOver, success } = this.state;
 
     const l = length * 50;
 
@@ -61,7 +60,15 @@ export class Play extends Component {
         </div>
 
         { gameOver && <div className='gameOver__overlay'>
-          Game Over
+          <div>
+            Game Over <Link to="/memorize">Retry</Link>
+          </div>
+        </div> }
+
+        { success && <div className='success__overlay'>
+          <div>
+            You are awesome <Link to="/memorize">Next Level</Link>
+          </div>
         </div> }
       </div>
     );
@@ -70,6 +77,7 @@ export class Play extends Component {
 
 
 export default inject(store => ({
+  increaseLevel: store.board.increaseLevel.bind(store.board),
+  length: store.board.currentLevel.length,
   blocks: store.board.blocks,
-  length: store.board.currentLevel.length
 }))(observer(Play));

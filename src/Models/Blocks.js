@@ -17,6 +17,10 @@ export default class Blocks {
     [8, 7], [8, 8], [8, 9], [8, 10], [8, 11], [8, 12], [8, 13], [8, 14]
   ];
 
+  @action increaseLevel() {
+    this.level = this.level + 1;
+  }
+
   @computed get currentLevel() {
     const [length, level ] = this.levels[this.level];
 
