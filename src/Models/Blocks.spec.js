@@ -5,7 +5,7 @@ it('should generate random gems', () => {
   board.level = 0;
   board.generate();
 
-  expect(board.gems.length).toEqual(3);
+  expect(board.gems.length).toEqual(2);
 });
 
 it('should create blocks', () => {
