@@ -4,6 +4,11 @@ body {
     font-family: sans-serif;
 }
 
+.App {
+    width: 400px;
+    margin: 0 auto;
+}
+
 .block {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

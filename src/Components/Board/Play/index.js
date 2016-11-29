@@ -3,6 +3,7 @@ import { observer, inject } from 'mobx-react';
 import classnames from 'classnames';
 import { action } from 'mobx';
 import { Link } from 'react-router';
+import { findDOMNode } from 'react-dom';
 import Block from './Block';
 import leftBlocks from './lib/leftBlocks';
 
@@ -27,6 +28,9 @@ export class Play extends Component {
 
     if (!left) {
       increaseLevel();
+      setTimeout(() => {
+        findDOMNode(this.refs['memorizeBtn']).click();
+      }, 1000);
       this.setState({ success: true });
     } else if (block.gem !== true) {
       this.setState({ gameOver: true });
@@ -52,12 +56,18 @@ export class Play extends Component {
 
     return (
       <div
-        style={{ width: l, height: l }}
+        style={{ width: l, height: l, margin: '0 auto' }}
         className={classnames('Play', { gameOver })}
       >
         <div className="blocks">
           { blocks.map(this.renderBlock) }
         </div>
+
+        {
+          !gameOver && !success && <div>
+            <center>Play</center>
+          </div>
+        }
 
         { gameOver && <div className='gameOver__overlay'>
           <div>
@@ -67,7 +77,8 @@ export class Play extends Component {
 
         { success && <div className='success__overlay'>
           <div>
-            You are awesome <Link to="/memorize">Next Level</Link>
+            You are awesome <Link ref="memorizeBtn" to="/memorize">Next
+            Level</Link>
           </div>
         </div> }
       </div>

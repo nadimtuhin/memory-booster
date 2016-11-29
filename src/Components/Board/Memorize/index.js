@@ -45,8 +45,9 @@ export class Memorize extends Component {
     const { blocks, length } = this.props;
 
     return (
-      <div className="Memorize" style={{ width: length * 50 }}>
+      <div className="Memorize" style={{ width: length * 50,  margin: '0 auto' }}>
         { blocks.map(this.renderBlock) }
+        <div><center>Memorize</center></div>
       </div>
     );
   }
