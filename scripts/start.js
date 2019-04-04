@@ -67,7 +67,7 @@ function setupCompiler(host, port, protocol) {
     // them in a readable focused way.
     var messages = formatWebpackMessages(stats.toJson({}, true));
     if (!messages.errors.length && !messages.warnings.length) {
-      console.log(chalk.green('Compiled successfully!'));
+      console.log(chalk.green('Game Compiled successfully!'));
       console.log();
       console.log('The app is running at:');
       console.log();
