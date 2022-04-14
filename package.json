@@ -54,7 +54,7 @@
   "dependencies": {
     "async": "^2.1.2",
     "classnames": "^2.2.5",
-    "lodash": "^4.17.2",
+    "lodash": "^4.17.21",
     "mobx": "^2.6.3",
     "mobx-react": "^3.5.9",
     "react": "^15.4.0",
