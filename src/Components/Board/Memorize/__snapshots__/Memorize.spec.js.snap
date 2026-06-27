@@ -3,6 +3,7 @@ exports[`test Memorize/Block matches snapshot gem true 1`] = `
   className="Memorize"
   style={
     Object {
+      "margin": "0 auto",
       "width": 150,
     }
   }>
@@ -41,5 +42,10 @@ exports[`test Memorize/Block matches snapshot gem true 1`] = `
         "width": 50,
       }
     } />
+  <div>
+    <center>
+      Memorize
+    </center>
+  </div>
 </div>
 `;

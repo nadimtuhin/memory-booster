@@ -1,7 +1,14 @@
 {
   "name": "memory-booster",
-  "version": "0.0.1",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A memory card game built with React and MobX",
+  "homepage": "https://github.com/nadimtuhin/memory-booster#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nadimtuhin/memory-booster.git"
+  },
+  "keywords": ["game", "memory", "react", "mobx"],
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-core": "6.17.0",

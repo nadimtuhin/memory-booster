@@ -4,6 +4,7 @@ exports[`test Play/Block  1`] = `
   style={
     Object {
       "height": 150,
+      "margin": "0 auto",
       "width": 150,
     }
   }>
@@ -49,6 +50,11 @@ exports[`test Play/Block  1`] = `
           "width": 50,
         }
       } />
+  </div>
+  <div>
+    <center>
+      Play
+    </center>
   </div>
 </div>
 `;
