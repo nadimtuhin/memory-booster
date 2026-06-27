@@ -2,8 +2,6 @@
 
 A memory card game built with React and MobX. You get a few seconds to memorize a grid of colored blocks, then reproduce it from memory. Each round gets harder.
 
-![Memory Booster gameplay](https://media.giphy.com/media/l3vReDYWyo0BBiJK8/giphy.gif)
-
 [![CI](https://github.com/nadimtuhin/memory-booster/actions/workflows/ci.yml/badge.svg)](https://github.com/nadimtuhin/memory-booster/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
