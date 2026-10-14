@@ -1,0 +1,2 @@
+{ "banners": { "h-start": "GET STARTED", "h-how": "HOW IT WORKS", "h-dev": "FOR DEVELOPERS" },
+  "hero": { "kicker": "OPEN SOURCE · REACT · MOBX", "title": "memory-booster", "tagline": "Memorize the grid. Then rebuild it." } }
