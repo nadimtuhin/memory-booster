@@ -1,4 +1,5 @@
 import { observable, action, computed } from 'mobx';
+import clamp from 'lodash/clamp';
 import range from 'lodash/range';
 import uniqueId from 'lodash/uniqueId';
 import sampleSize from 'lodash/sampleSize';
@@ -18,11 +19,12 @@ export default class Blocks {
   ];
 
   @action increaseLevel() {
-    this.level = this.level + 1;
+    this.level = Math.min(this.level + 1, this.levels.length - 1);
   }
 
   @computed get currentLevel() {
-    const [length, gems ] = this.levels[this.level];
+    const index = clamp(this.level, 0, this.levels.length - 1) || 0;
+    const [length, gems ] = this.levels[index];
 
     return {
       gems, length

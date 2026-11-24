@@ -50,3 +50,23 @@ it('Play/Block ', () => {
 
   expect(tree.children[0].children[0].props.className.includes('selected')).toBe(true);
 });
+
+it('Play ignores clicks once the level is won', () => {
+  jest.useFakeTimers();
+  const increaseLevel = jest.fn();
+  const blocks = mobx.observable([
+    { id: 0, gem: true, selected: false },
+    { id: 1, gem: false, selected: false },
+  ]);
+
+  const component = renderer.create(
+    <Play blocks={blocks} length={2} increaseLevel={increaseLevel} />
+  );
+
+  const tree = component.toJSON();
+  tree.children[0].children[0].props.onClick();
+  tree.children[0].children[1].props.onClick();
+
+  expect(increaseLevel.mock.calls.length).toEqual(1);
+  expect(blocks[1].selected).toBe(false);
+});

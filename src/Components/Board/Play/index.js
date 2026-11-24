@@ -21,6 +21,9 @@ export class Play extends Component {
   @action
   handleSelectBlock = (index) => {
     const { blocks, increaseLevel } = this.props;
+    const { gameOver, success } = this.state;
+    if (gameOver || success) return;
+
     const block = blocks[index];
     block.selected = true;
 
