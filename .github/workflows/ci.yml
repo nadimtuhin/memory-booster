@@ -20,3 +20,4 @@ jobs:
           cache: yarn
       - run: yarn install --frozen-lockfile
       - run: CI=true yarn test
+      - run: yarn build
