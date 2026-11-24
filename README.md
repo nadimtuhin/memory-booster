@@ -79,7 +79,7 @@ yarn test
 ## How it works
 
 1. **Memorize** - colored blocks flash on screen for a few seconds
-2. **Play** - reproduce the pattern by clicking blocks in order
+2. **Play** - click every block that was lit, in any order. One wrong click ends the round
 3. Level goes up on success. On failure you retry the same level.
 
 ## Contributing
